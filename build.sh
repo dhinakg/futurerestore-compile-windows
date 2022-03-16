@@ -84,7 +84,7 @@ sed -i'' 's|fopen(fname, \"w\")|fopen(fname, \"wb\")|' ./futurerestore/external/
 #sed -i'' 's|failed to find cmd: %s\",cmd|failed to find cmd\"|' ./liboffsetfinder64/include/liboffsetfinder64/OFexception.hpp
 
 cd ./xpwn
-cmake -DCMAKE_SYSTEM_NAME=MSYS -S ./ -B ./compile -G "MinGW Makefiles"
+cmake -DCMAKE_SYSTEM_NAME=MSYS -S ./ -B ./compile -G "MSYS Makefiles"
 cd ./compile
 make LDFLAGS="$BEGIN_LDFLAGS"
 cp ./common/libcommon.a /mingw64/lib/libcommon.a
