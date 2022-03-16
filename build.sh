@@ -41,7 +41,7 @@ git clone --recursive https://github.com/tihmstar/img4tool
 #git clone --recursive https://github.com/tihmstar/libinsn
 #git clone --recursive https://github.com/tihmstar/liboffsetfinder64
 #git clone --recursive https://github.com/tihmstar/libipatcher
-git clone --recursive https://github.com/marijuanARM/futurerestore
+git clone --recursive https://github.com/m1stadev/futurerestore --branch -test
 
 # xpwn windows fixes
 sed -i'' 's|#include <unistd.h>||' ./xpwn/ipsw-patch/main.c
@@ -84,7 +84,7 @@ sed -i'' 's|fopen(fname, \"w\")|fopen(fname, \"wb\")|' ./futurerestore/external/
 #sed -i'' 's|failed to find cmd: %s\",cmd|failed to find cmd\"|' ./liboffsetfinder64/include/liboffsetfinder64/OFexception.hpp
 
 cd ./xpwn
-cmake -DCMAKE_SYSTEM_NAME=MSYS -S ./ -B ./compile
+cmake -DCMAKE_SYSTEM_NAME=MSYS -S ./ -B ./compile -G "Unix Makefiles"
 cd ./compile
 make LDFLAGS="$BEGIN_LDFLAGS"
 cp ./common/libcommon.a /mingw64/lib/libcommon.a
